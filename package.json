@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "cleanup": "./cleanup.sh",
-    "client": "npx webpack --mode production --no; ./client/start_nginx_container.sh",
+    "client": "npx webpack --mode production --yes; ./client/start_nginx_container.sh",
     "client-dev": "./client/start_nginx_container.sh && npx webpack --watch",
     "db": "./mongo/start_mongo_container.sh",
+    "init": "npm i -g webpack-cli; npm run startup",
     "server": "./server/start_nodejs_container.sh",
     "server-dev": "./server/start_nodejs_container_dev.sh",
     "server-watch": "nodemon server/index.js",

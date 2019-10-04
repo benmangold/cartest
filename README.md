@@ -1,24 +1,32 @@
 # encoding-server
 
-## what is it?
+![My beautiful boy](./img/v0.0.0.png)
 
-this is an encoding app which I'm trying to make useful for myself as an audio engineer
+## what is this?
 
-it is a containerized, full-stack app backed by mongo and S3
+this is an encoding app which I'm trying to make useful for myself as a musician and audio engineer
 
-media files can be uploaded to the server, where they are encoded to mp3 and stored in s3
+the 'car test' is when one listens to a work-in-progress song or piece of audio on a most familiar sound system, often a car.  the familiar setting offers clearer objectivity and potentially, valuable insight.  
 
-records are kept of uploaded files, and are dynamically rendered as audio elements for the client
+i want to build a tool which helps me find clarity in my audio engineering decisions and sparks of joy in the creative process
 
-upload stuff, and listen to it!
+## cheesy, what IS it though?
+
+it is a fully-containerized, full-stack app backed by mongo and S3
+
+media files can be uploaded to the express server from a react client, where they are encoded to mp3 via ffmpeg and uploaded to s3
+
+records are kept of uploaded files, and uploads are dynamically rendered as audio elements for the client
+
+upload stuff, and listen to it
 
 ## run on a mac
 
 requires nodejs/npm and docker on the host
 
-```
+```bash
 cd encoding server
-npm run startup
+npm run startup # if this prompts you to install webpack-cli, say yes and run again
 ```
 
 check out [http://127.0.0.1:80](http://127.0.0.1:80)
@@ -38,6 +46,8 @@ storage - ecrypted in S3 and served via signed requests
 # full stack commands
 
 npm run startup # build and start mongo, nodejs, and nginx containers locally
+# NOTE: will prompt you to install webpack-cli. say yes and run again
+
 npm run cleanup # stop local containers
 
 # individual service commands
