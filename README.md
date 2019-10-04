@@ -74,3 +74,15 @@ module.exports = {
 ```
 
 bucket settings aren't properly configured yet, but can be detectived in `server/aws/uploadToS3.js`
+
+## api routes
+
+GET /api/version - returns api version as JSON
+
+GET /api/encodingJobs - returns encoding jobs as JSON
+
+GET /api/audioLinks - returns encoded audio signed links as JSON
+
+POST /api/form/encodeMp3Audio - Encode audio as multipart form data
+
+POST /api/blob/encodeMp3Audio - Encode audio as a blob in request body # TODO
