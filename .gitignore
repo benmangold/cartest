@@ -1,0 +1,8 @@
+*.secret.*
+mongo/data/*
+data/*
+ffmpeg
+node_modules
+uploads/*
+*.mp3
+*.wav

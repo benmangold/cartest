@@ -1,0 +1,40 @@
+{
+  "name": "encoding-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cleanup": "./cleanup.sh",
+    "client": "npx webpack --mode production --no; ./client/start_nginx_container.sh",
+    "client-dev": "./client/start_nginx_container.sh && npx webpack --watch",
+    "db": "./mongo/start_mongo_container.sh",
+    "server": "./server/start_nodejs_container.sh",
+    "server-dev": "./server/start_nodejs_container_dev.sh",
+    "server-watch": "nodemon server/index.js",
+    "startup": "npm run db; npm run server; npm run client",
+    "test": "jest --detectOpenHandles"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.517.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.3.1",
+    "multer": "^1.4.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.1",
+    "supertest": "^4.0.2",
+    "webpack": "4.28.4",
+    "webpack-cli": "^3.3.9"
+  }
+}
