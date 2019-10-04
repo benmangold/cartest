@@ -1,4 +1,4 @@
-# encoding-server
+# cartest
 
 ![My beautiful boy](./img/v0.0.0.png)
 
@@ -6,7 +6,7 @@
 
 this is an encoding app which I'm trying to make useful for myself as a musician and audio engineer
 
-the 'car test' is when one listens to a work-in-progress song or piece of audio on a most familiar sound system, often a car.  the familiar setting offers clearer objectivity and potentially, valuable insight.  
+the 'car test' is when one listens to a work-in-progress song or piece of audio on a most familiar sound system, often a car.  the familiar setting offers clearer objectivity and, potentially, valuable insight
 
 i want to build a tool which helps me find clarity in my audio engineering decisions and sparks of joy in the creative process
 
@@ -25,16 +25,15 @@ upload stuff, and listen to it
 requires nodejs/npm and docker on the host
 
 ```bash
-cd encoding server
-npm run startup # if this prompts you to install webpack-cli, say yes and run again
+cd cartest
+npm run init # installs webpack-cli and runs startup script
 ```
 
 check out [http://127.0.0.1:80](http://127.0.0.1:80)
 
 ## tech stack
 
-
-client - React via Webpack and Babel in a NGINX Docker container
+client - react via webpack and babel in an nginx container
 
 server - express and ffmpeg
 
@@ -43,7 +42,7 @@ db - mongo in a docker container
 storage - ecrypted in S3 and served via signed requests
 
 ```bash
-# full stack commands
+# full stack build commands
 
 npm run startup # build and start mongo, nodejs, and nginx containers locally
 # NOTE: will prompt you to install webpack-cli. say yes and run again
