@@ -1,7 +1,7 @@
 # cartest
 
-![My beautiful boy](./img/v0.0.0.png)
-
+![my beautiful boy](./img/v0.0.0.png)
+_my beautiful boy_
 ## what is this?
 
 this is an encoding app which I'm trying to make useful for myself as a musician and audio engineer
