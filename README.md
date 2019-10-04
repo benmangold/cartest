@@ -8,7 +8,7 @@ this is an encoding app which I'm trying to make useful for myself as a musician
 
 the 'car test' is when one listens to a work-in-progress song or piece of audio on a most familiar sound system, often a car.  the familiar setting offers clearer objectivity and, potentially, valuable insight
 
-i want to build a tool which helps me find clarity in my audio engineering decisions and sparks of joy in the creative process
+i want to build a tool which helps me find clarity in my audio engineering decisions and sparks joy in the creative process
 
 ## cheesy, what IS it though?
 
