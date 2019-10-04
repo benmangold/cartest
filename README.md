@@ -26,7 +26,7 @@ requires nodejs/npm and docker on the host
 
 ```bash
 cd cartest
-npm run init # installs webpack-cli and runs startup script
+npm run init # installs webpack-cli and runs startup script, you'll be prompted to say yes
 ```
 
 check out [http://127.0.0.1:80](http://127.0.0.1:80)
