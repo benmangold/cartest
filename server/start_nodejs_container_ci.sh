@@ -14,4 +14,4 @@ cd ..
 
 docker build -t bm/nodejs-ffmpeg .
 
-docker run -it -d --rm --name nodejs -e CI_ENV:$CI_ENV --network host bm/nodejs-ffmpeg node server/index.js 
+docker run -it -d --name nodejs -e CI_ENV:$CI_ENV --network host bm/nodejs-ffmpeg node server/index.js 

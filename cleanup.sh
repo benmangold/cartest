@@ -5,3 +5,5 @@ set +e
 docker stop nginx
 docker stop nodejs
 docker stop mongo
+
+docker rm nodejs

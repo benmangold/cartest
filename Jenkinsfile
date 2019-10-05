@@ -41,6 +41,7 @@ pipeline {
     post { 
         always { 
             nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
+                sh 'docker logs nodejs'
                 sh 'npm run cleanup'
             }
         }
