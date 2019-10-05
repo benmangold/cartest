@@ -13,7 +13,10 @@ const localDev = {
 
 const config = localDev
 
-process.env.CI_ENV == 'jenkins' ? config.DB_URI='mongodb://127.0.0.1:27017' : null
+console.log('ci env')
+console.log(process.env)
+
+process.env.CI_ENV ? config.DB_URI='mongodb://127.0.0.1:27017' : null
 
 console.log('======Setting Server Config======')
 console.log(config)
