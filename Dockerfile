@@ -17,8 +17,8 @@ COPY package-lock.json /tmp/app/package-lock.json
 
 RUN npm install --production
 
-# will not be needed in production image
-RUN npm install nodemon
+# # will not be needed in production image
+# RUN npm install nodemon
 
 COPY server /tmp/app/server
 

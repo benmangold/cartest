@@ -29,7 +29,7 @@ cd cartest
 npm run init # installs webpack-cli and runs startup script, you'll be prompted to say yes
 ```
 
-check out [http://127.0.0.1:80](http://127.0.0.1:80)
+check out [http://127.0.0.1:81](http://127.0.0.1:81)
 
 ## tech stack
 

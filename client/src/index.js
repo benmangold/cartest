@@ -10,7 +10,7 @@ const element = <App name='encoding client woo woo' />;
 ReactDOM.render(element, document.getElementById('root'));
 
 function logVersion() {
-  fetch('http://127.0.0.1:80/api/version')
+  fetch('http://127.0.0.1:81/api/version')
     .then(function(response) {
       return response.json();
     })
