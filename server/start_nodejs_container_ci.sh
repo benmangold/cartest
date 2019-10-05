@@ -28,4 +28,4 @@ docker build -t bm/nodejs-ffmpeg .
 
 rm server/aws.secret.js
 
-docker run -it -d --name nodejs -e CI_ENV:$CI_ENV --network host bm/nodejs-ffmpeg node server/index.js 
+docker run -it -d --name nodejs -e CI_ENV=$CI_ENV --network host bm/nodejs-ffmpeg node server/index.js 
