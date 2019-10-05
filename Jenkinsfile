@@ -16,9 +16,10 @@ pipeline {
 
         steps {
               nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
+                withCredentials([usernamePassword(credentialsId: 'cartest-s3-dev', passwordVariable: 'AWS_ACCESS_KEY', usernameVariable: 'AWS_SECRET_KEY')]) {
                   sh 'npm run server-ci'
                   sh 'docker ps'
-
+                }
               }
             }
         }
