@@ -8,7 +8,6 @@ pipeline {
           steps {
               nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
                   sh 'npm run db'
-                  sh 'docker ps'
               }
             }
         }

@@ -10,7 +10,7 @@ cd "$(dirname "$0")"
 
 docker build . -t bm/nginx-alpine
 
-docker run -d --name nginx -p 81:80 -p 3000:3000 \
+docker run -d --name nginx --network host \
 -v $PWD/dist:/usr/share/nginx/html \
 -v $PWD/nginx-ci:/etc/nginx \
  bm/nginx-alpine:latest  

@@ -8,3 +8,4 @@ docker stop mongo
 
 docker rm nodejs
 docker rm nginx
+docker rm mongo
