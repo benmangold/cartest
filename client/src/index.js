@@ -10,7 +10,7 @@ logVersion()
 ReactDOM.render(element, document.getElementById('root'));
 
 function logVersion() {
-  fetch('127.0.0.1:81/api/version')
+  fetch('http://127.0.0.1:81/api/version')
     .then(function(response) {
       return response.json();
     })
