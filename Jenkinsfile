@@ -41,7 +41,7 @@ pipeline {
         always { 
             nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
                 sh 'docker ps -a'
-                sh 'docker logs db'
+                sh 'docker logs mongo'
                 sh 'docker logs nginx'
                 sh 'docker logs nodejs'
                 sh 'npm run cleanup'

@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ci": "npm run db; npm run server-ci; npm run client",
+    "ci": "npm run db; npm run server-ci; npm run client-ci",
     "cleanup": "./cleanup.sh",
     "client": "npx webpack --mode production; ./client/start_nginx_container.sh",
+    "client_ci": "npx webpack --mode production; ./client/start_nginx_container_ci.sh",
     "client-dev": "./client/start_nginx_container.sh && npx webpack --watch",
     "db": "./mongo/start_mongo_container.sh",
     "init": "npm i -g webpack-cli; npm run startup",
