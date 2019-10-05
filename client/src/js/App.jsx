@@ -18,7 +18,7 @@ class App extends React.Component {
   }
 
   getAudioList() {
-    fetch('http://127.0.0.1:81/api/audioLinks')
+    fetch('127.0.0.1:81/api/audioLinks')
       .then(response => response.json())
       .then(audioList => this.setState({ audioList: audioList }),
         err => console.log(JSON.stringify(err))
