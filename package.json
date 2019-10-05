@@ -11,6 +11,7 @@
     "init": "npm i -g webpack-cli; npm run startup",
     "server": "./server/start_nodejs_container.sh",
     "server-dev": "./server/start_nodejs_container_dev.sh",
+    "server-logs": "docker logs -f nodejs",
     "server-watch": "nodemon server/index.js",
     "startup": "npm run db; npm run server; npm run client",
     "test": "jest --detectOpenHandles"

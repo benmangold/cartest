@@ -6,6 +6,12 @@ AWS.config.update({
   secretAccessKey: AWS_SECRET_KEY,
 });
 
+const s3 = new AWS.S3();
+
+s3.age = 0;
+
 module.exports.getS3 = () => {
-  return new AWS.S3();
-}
+  s3.age++;
+  console.log('s3 class age ' + s3.age)
+  return s3;
+};

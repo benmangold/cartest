@@ -61,6 +61,7 @@ npm run db # start the mongoDB container, mounts /mongo/data
 docker stop nodejs # stop server
 npm run server # start nodeJS container at localhost:3000
 npm run server-dev # ^^ but with nodemon watching for changes
+npm run server-logs # tail logs from nodejs container
 ```
 ## notes
 
