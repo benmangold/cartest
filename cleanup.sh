@@ -7,3 +7,4 @@ docker stop nodejs
 docker stop mongo
 
 docker rm nodejs
+docker rm nginx

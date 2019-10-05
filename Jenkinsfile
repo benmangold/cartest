@@ -18,7 +18,6 @@ pipeline {
               nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
                 withCredentials([usernamePassword(credentialsId: 'cartest-s3-dev', passwordVariable: 'AWS_ACCESS_KEY', usernameVariable: 'AWS_SECRET_KEY')]) {
                   sh 'npm run server-ci'
-                  sh 'docker ps'
                 }
               }
             }
@@ -27,7 +26,6 @@ pipeline {
             steps {
               nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
                   sh 'npm run client'
-                  sh 'docker ps'
               }
             }
         }
@@ -42,6 +40,9 @@ pipeline {
     post { 
         always { 
             nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
+                sh 'docker ps -a'
+                sh 'docker logs db'
+                sh 'docker logs nginx'
                 sh 'docker logs nodejs'
                 sh 'npm run cleanup'
             }
