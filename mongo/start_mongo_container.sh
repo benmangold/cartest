@@ -15,7 +15,7 @@ mkdir -p data
 
 docker build -t bm/mongo-alpine .
 
-docker run --rm -d --name mongo -v $PWD/data:/data/db -p 27017:27017 bm/mongo-alpine:latest
+docker run -d --name mongo -v $PWD/data:/data/db -p 27017:27017 bm/mongo-alpine:latest
   
 ## debug mongo container
 # docker exec -ti mongo sh
