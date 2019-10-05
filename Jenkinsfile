@@ -6,7 +6,6 @@ pipeline {
             steps {
                 nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
                     sh 'npm run db'
-                    sh 'docker stop mongo'
                 }
             }
         }
@@ -14,7 +13,6 @@ pipeline {
             steps {
                 nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
                     sh 'npm run server'
-                    sh 'docker stop nodejs'
                 }
             }
         }
@@ -22,9 +20,13 @@ pipeline {
             steps {
                 nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
                     sh 'npm run client'
-                    sh 'docker stop nginx'
                 }
             }
+        } 
+    }
+    post { 
+        always { 
+            echo 'I will always say Hello again!'
         }
     }
 }
