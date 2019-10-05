@@ -11,4 +11,12 @@ const localDev = {
   SERVER_MAX_UPLOAD: '300mb'
 }
 
-module.exports = localDev
+const config = localDev
+
+process.env.CI_ENV == 'jenkins' ? config.DB_URI='mongodb://127.0.0.1:27017' : null
+
+console.log('======Setting Server Config======')
+console.log(config)
+console.log('=================================')
+
+module.exports = config
