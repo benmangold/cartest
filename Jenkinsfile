@@ -25,7 +25,7 @@ pipeline {
         stage('nginx') {
             steps {
               nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
-                  sh 'npm run client'
+                  sh 'npm run client-ci'
               }
             }
         }
