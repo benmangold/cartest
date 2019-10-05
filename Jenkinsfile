@@ -5,10 +5,12 @@ pipeline {
     }
     stages {
         stage('e2e') {
-            nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
-                sh 'npm run ci'
-                sh 'curl 127.0.0.1:81'
-            }
+          steps {
+              nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
+                  sh 'npm run ci'
+                  sh 'curl 127.0.0.1:81'
+              }
+          }
         }
     }
     post { 
