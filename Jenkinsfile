@@ -28,7 +28,6 @@ pipeline {
                         sh "echo export default '$API_IP:81' >> ./client/src/config.js"
                         sh 'npm i -g npx'
                         sh 'npm run client-ci'
-                        sh 'rm .env'
                     }
                 }
             }
