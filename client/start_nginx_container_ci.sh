@@ -9,9 +9,9 @@
 
 cd "$(dirname "$0")"
 
-rm ./src/config.js
+# rm ./src/config.js
 
-echo "export default '$API_IP:81';" >> ./src/config.js
+# echo "export default '$API_IP:81';" >> ./src/config.js
 
 npm i -g npx
 
