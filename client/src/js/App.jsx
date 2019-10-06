@@ -3,6 +3,8 @@ import React from 'react';
 import AudioList from './components/AudioList.jsx';
 import UploadForm from './components/UploadForm.jsx';
 
+import API_URL from '../config.js'
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -18,7 +20,7 @@ class App extends React.Component {
   }
 
   getAudioList() {
-    fetch('http://127.0.0.1:81/api/audioLinks')
+    fetch(`${API_URL}/api/audioLinks`)
       .then(response => response.json())
       .then(audioList => this.setState({ audioList: audioList }),
         err => console.log(JSON.stringify(err))

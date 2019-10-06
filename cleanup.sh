@@ -1,10 +1,13 @@
 #!/bin/bash
 set +e
-## https://stackoverflow.com/questions/34228864/stop-and-delete-docker-container-if-its-running
+
+echo ~~ stopping docker containers ~~
 
 docker stop nginx
 docker stop nodejs
 docker stop mongo
+
+echo ~~ removing docker containers ~~
 
 docker rm nodejs
 docker rm nginx

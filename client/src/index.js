@@ -3,14 +3,16 @@ import ReactDOM from 'react-dom';
 
 import App from './js/App.jsx';
 
-const element = <App name='encoding client woo woo' />;
+import API_URL from './config.js'
+
+const element = <App name='encoding client woo woo' api-url={ API_URL } />;
 
 logVersion()
 
 ReactDOM.render(element, document.getElementById('root'));
 
 function logVersion() {
-  fetch('http://127.0.0.1:81/api/version')
+  fetch(`${API_URL}/api/version`)
     .then(function(response) {
       return response.json();
     })
