@@ -38,10 +38,12 @@ pipeline {
                 sh 'curl 127.0.0.1:3000'
                 sh 'curl 127.0.0.1:27017'
             }
-            input {
-                message "App running on 81. Continue?"
-                ok "Yes, stop the app."
-            }          
+            timeout(time: 300, unit: 'SECONDS') {
+                input {
+                    message "App running on 81. Continue?"
+                    ok "Yes, stop the app."
+                }  
+            }        
         }
     }
     post { 
