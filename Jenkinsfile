@@ -27,7 +27,7 @@ pipeline {
                         sh 'rm ./client/src/config.js'
                         sh 'echo export default \\"$API_IP:81\\" >> ./client/src/config.js'
                         sh 'npm i -g npx'
-                        sh 'npm i -D webpack-cli'	
+                        sh 'npm i -D webpack-cli'	// will fail first build on a new pipeline
                         sh 'npm run client-ci'
 
                     }
