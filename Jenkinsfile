@@ -26,7 +26,7 @@ pipeline {
                     withCredentials([string(credentialsId: 'jenkins-ip', variable: 'API_IP')]) {
                         sh 'rm ./client/src/config.js'
                         sh 'echo export default \\"$API_IP:81\\" >> ./client/src/config.js'
-                        sh 'npm i -g npx'	
+                        sh 'npm i -g npx webpack-cli'	
                         sh 'npm run client-ci'
 
                     }
@@ -55,6 +55,7 @@ pipeline {
         always { 
             nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
                 sh 'npm run cleanup'
+                sh 'deleteDir()'
             }
         }
     }
