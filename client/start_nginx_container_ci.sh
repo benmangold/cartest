@@ -13,6 +13,10 @@ rm ./src/config.js
 
 echo export default '$API_IP:81'; >> ./src/config.js
 
+npm i -g npx
+
+npx webpack --mode production;
+
 docker build . -t bm/nginx-alpine
 
 docker run -d --name nginx --network host \
