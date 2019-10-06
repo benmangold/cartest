@@ -6,16 +6,11 @@
 ## use via `npm run client` or `npm run client-dev`
 ## ##
 
-
-cd "$(dirname "$0")"
-
-# rm ./src/config.js
-
-# echo "export default '$API_IP:81';" >> ./src/config.js
-
 npm i -g npx
 
 npx webpack --mode production;
+
+cd "$(dirname "$0")"
 
 docker build . -t bm/nginx-alpine
 
