@@ -5,7 +5,9 @@ import UploadForm from './components/UploadForm.jsx';
 
 import API_URL from '../config.js'
 
-console.log(`API URL: ${API_URL}`)
+
+
+console.log(`API URL: ${JSON.stringify(API_URL)}`)
 class App extends React.Component {
   constructor(props) {
     super(props);
