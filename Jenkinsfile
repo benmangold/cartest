@@ -32,15 +32,9 @@ pipeline {
                 }
             }
         }
-        stage('testing') {
-            steps {
-                sh 'curl 127.0.0.1:81/api/version'
-                sh 'curl 127.0.0.1:81/index.html'
-                sh 'curl 127.0.0.1:3000'
-                sh 'curl 127.0.0.1:27017'
-            }
+        stage('live check') {
             input {
-                message "App running on 81. Continue?"
+                message "App running on port 81. Continue?"
                 ok "Yes, stop the app."
             }          
         }
