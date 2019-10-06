@@ -1,9 +1,9 @@
 #!/bin/sh
 
 ## ##
-## starts nginx in a docker container
+## starts nginx in a docker container on jenkins
 ##
-## use via `npm run client` or `npm run client-dev`
+## use via `npm run client-ci`
 ## ##
 
 cd "$(dirname "$0")"
