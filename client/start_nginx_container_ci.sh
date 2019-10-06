@@ -11,9 +11,7 @@ cd "$(dirname "$0")"
 
 rm ./src/config.js
 
-echo export default '$API_IP:81' >> ./src/config.js
-
-npm i -g npx
+echo export default '$API_IP:81'; >> ./src/config.js
 
 docker build . -t bm/nginx-alpine
 
