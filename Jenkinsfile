@@ -33,6 +33,9 @@ pipeline {
             }
         }
         stage('live check') {
+            steps {
+              echo 'App running on port 81 for live check'
+            }
             input {
                 message "App running on port 81. Continue?"
                 ok "Yes, stop the app."
