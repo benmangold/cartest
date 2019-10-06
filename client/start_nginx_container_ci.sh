@@ -1,10 +1,16 @@
 #!/bin/sh
-
+set -e
 ## ##
 ## starts nginx in a docker container on jenkins
 ##
 ## use via `npm run client-ci`
 ## ##
+
+npm i -g npx
+
+npm i -D webpack-cli
+
+npx webpack --mode production; 
 
 cd "$(dirname "$0")"
 

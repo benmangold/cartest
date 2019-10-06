@@ -1,5 +1,5 @@
 #!/bin/sh
-
+set -e
 ## ##
 ## starts mongo in a docker container
 ##
