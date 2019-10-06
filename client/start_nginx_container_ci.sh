@@ -6,9 +6,9 @@
 ## use via `npm run client` or `npm run client-dev`
 ## ##
 
-npm i -g npx
+# npm i -g npx
 
-npx webpack --mode production;
+# npx webpack --mode production;
 
 cd "$(dirname "$0")"
 
