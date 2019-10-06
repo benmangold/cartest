@@ -25,19 +25,23 @@ pipeline {
                 nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
                     withCredentials([string(credentialsId: 'jenkins-ip', variable: 'API_IP')]) {
                         sh 'rm ./client/src/config.js'
-                        sh "echo export default '$API_IP:81' >> ./client/src/config.js"
+                        sh "echo export default '$API_IP:81' >> .env"
                         sh 'npm i -g npx'
                         sh 'npm run client-ci'
+                        sh 'rm .env'
                     }
                 }
             }
         }
-        stage('live check') {
+        stage('testing') {
             steps {
-              echo 'App running on port 81 for live check'
+                sh 'curl 127.0.0.1:81/api/version'
+                sh 'curl 127.0.0.1:81/index.html'
+                sh 'curl 127.0.0.1:3000'
+                sh 'curl 127.0.0.1:27017'
             }
             input {
-                message "App running on port 81. Continue?"
+                message "App running on 81. Continue?"
                 ok "Yes, stop the app."
             }          
         }

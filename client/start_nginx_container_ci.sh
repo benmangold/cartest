@@ -6,10 +6,6 @@
 ## use via `npm run client` or `npm run client-dev`
 ## ##
 
-# npm i -g npx
-
-# npx webpack --mode production;
-
 cd "$(dirname "$0")"
 
 docker build . -t bm/nginx-alpine
