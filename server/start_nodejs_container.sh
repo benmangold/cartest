@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ## ##
 ## starts nodejs and ffmpeg in a docker container

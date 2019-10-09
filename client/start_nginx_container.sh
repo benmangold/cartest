@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ## ##
 ## starts nginx in a docker container

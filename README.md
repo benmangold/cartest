@@ -12,7 +12,9 @@ i want to build a tool which helps me find clarity in my audio engineering decis
 
 ## cheesy, what IS it though?
 
-it is a fully-containerized, full-stack app backed by mongo and S3
+mostly where I play around with docker containers and build tooling so far
+
+cartest is a fully-containerized beginning of a full-stack app backed by mongo and S3
 
 media files can be uploaded to the express server from a react client, where they are encoded to mp3 via ffmpeg and uploaded to s3
 

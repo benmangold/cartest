@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 ## ##
 ## starts mongo in a docker container
@@ -9,7 +9,7 @@ set -e
 cd "$(dirname "$0")"
 
 ## reset db
-# rm -rf data
+rm -rf data
 
 mkdir -p data
 

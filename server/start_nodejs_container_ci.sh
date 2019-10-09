@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 ## ##
 ## starts nodejs and ffmpeg in a docker container

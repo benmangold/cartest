@@ -6,9 +6,10 @@
   "scripts": {
     "ci": "npm run db; npm run server-ci; npm run client-ci",
     "cleanup": "./cleanup.sh",
-    "client": "npx webpack --mode production; ./client/start_nginx_container.sh",
+    "client": "npm run webpack; ./client/start_nginx_container.sh",
     "client-ci": "./client/start_nginx_container_ci.sh",
     "client-dev": "./client/start_nginx_container.sh && npx webpack --watch",
+    "dist": "webpack --mode production",
     "db": "./mongo/start_mongo_container.sh",
     "init": "npm i -g webpack-cli; npm run startup",
     "server": "./server/start_nodejs_container.sh",
@@ -17,7 +18,8 @@
     "server-logs": "docker logs -f nodejs",
     "server-watch": "npx nodemon server/index.js",
     "startup": "npm run db; npm run server; npm run client",
-    "test": "jest --detectOpenHandles"
+    "test": "jest --detectOpenHandles",
+    "webpack": "./webpack.sh"
   },
   "keywords": [],
   "author": "",
