@@ -8,8 +8,6 @@ set -e
 ## use via `npm run ci`
 ## ##
 
-npx webpack --mode production; 
-
 cd "$(dirname "$0")"
 
 ## set credentials proveded by jenkins
