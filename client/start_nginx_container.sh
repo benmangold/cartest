@@ -8,7 +8,7 @@
 
 cd "$(dirname "$0")"
 
-docker build . -t bm/nginx-alpine
+# docker build . -t bm/nginx-alpine
 
 docker run -d --name nginx -p 81:81 \
 -v $PWD/dist:/usr/share/nginx/html \

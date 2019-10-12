@@ -11,7 +11,7 @@ VOLUME [ "data", "/data/db"  ]
 
 EXPOSE 27017 28017
 
-COPY init.sh /tmp
+COPY mongo/init.sh /tmp
 
 CMD [ "mongod", "--bind_ip", "0.0.0.0" ]
 

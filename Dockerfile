@@ -11,11 +11,11 @@ RUN apk update
 RUN apk add ffmpeg
 
 
-COPY package.json /tmp/app/package.json
+# COPY package.json /tmp/app/package.json
 
-COPY package-lock.json /tmp/app/package-lock.json
+# COPY package-lock.json /tmp/app/package-lock.json
 
-RUN npm install --production
+# RUN npm install --production
 
 # # will not be needed in production image
 # RUN npm install nodemon

@@ -14,4 +14,4 @@ docker build -t bm/eslint -f $PWD/client/eslint/Dockerfile .
 
 echo "running webpack in $PWD"
 
-docker run --rm -v $PWD/client:/tmp/app/client bm/eslint
+docker run --rm -v $PWD/node_modules:/tmp/app/node_modules -v $PWD/client:/tmp/app/client bm/eslint

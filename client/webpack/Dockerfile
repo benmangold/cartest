@@ -14,6 +14,6 @@ COPY ./webpack.config.js /tmp/app/webpack.config.js
 
 COPY ./.babelrc /tmp/app/.babelrc
 
-RUN npm i
+# RUN npm i
 
 RUN mkdir /tmp/app/client
