@@ -9,7 +9,7 @@ set -e
 cd "$(dirname "$0")"
 
 ## reset db
-rm -rf data
+# rm -rf data
 
 mkdir -p data
 
