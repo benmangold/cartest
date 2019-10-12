@@ -35,10 +35,10 @@ pipeline {
                 sh 'curl 127.0.0.1:81/api/version'
                 sh 'curl 127.0.0.1:81/api/audioLinks'
             }
-            input {
-                message "App running on 81. Continue?"
-                ok "Yes, stop the app."
-            }  
+            // input {
+            //     message "App running on 81. Continue?"
+            //     ok "Yes, stop the app."
+            // }  
         }
     }
     post { 
