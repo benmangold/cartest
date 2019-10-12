@@ -10,7 +10,7 @@ cd "$(dirname "$0")"
 
 cd ../..
 
-docker build -t bm/eslint -f $PWD/client/eslint/Dockerfile .
+# docker build -t bm/eslint -f $PWD/client/eslint/Dockerfile .
 
 echo "running webpack in $PWD"
 

@@ -5,5 +5,9 @@
 !webpack.config.js
 !.eslintrc.js
 
+# client and server
+!package.json
+!package-lock.json
+
 # mongo
 !mongo/init.sh

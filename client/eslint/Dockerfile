@@ -14,8 +14,6 @@ COPY ./.eslintrc.js /tmp/app/.eslintrc.js
 
 COPY ./.babelrc /tmp/app/.babelrc
 
-# RUN npm i
-
 RUN mkdir /tmp/app/client
 
 ENTRYPOINT [ "npm", "run", "lint-client" ]

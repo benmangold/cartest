@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm i; npm run build-client; npm run build-server; npm run build-db",
+    "build": "npm i; npm run build-eslint; npm run build-client; npm run build-server; npm run build-db",
     "build-client": "docker build -f client/Dockerfile . -t bm/nginx-alpine",
     "build-db": "docker build -f mongo/Dockerfile -t bm/mongo-alpine . ",
+    "build-eslint": "docker build -t bm/eslint -f $PWD/client/eslint/Dockerfile . ",
     "build-server": "docker build -t bm/nodejs-ffmpeg . ",
     "ci": "npm run db; npm run server-ci; npm run client-ci",
     "cleanup": "./cleanup.sh",

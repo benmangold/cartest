@@ -1,5 +1,8 @@
 #!/bin/bash
+
 set +e
+
+rm client/dist/bundle.js
 
 echo ~~ stopping docker containers ~~
 

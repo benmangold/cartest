@@ -24,7 +24,9 @@ pipeline {
         stage('start nginx') {
             steps {
                 nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
-                    sh 'npm run ci'
+                    withCredentials([usernamePassword(credentialsId: 'cartest-s3-dev', passwordVariable: 'AWS_SECRET_KEY', usernameVariable: 'AWS_ACCESS_KEY')]) {
+                        sh 'npm run ci'
+                    }
                 }
             }
         }
