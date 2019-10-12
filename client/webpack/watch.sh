@@ -3,7 +3,7 @@ set -e
 ## ##
 ## runs webpack to produce /client/dist/bundle.js
 ##
-## use via `npm run webpack`
+## use via `npm run webpack-dev`
 ## ##
 
 cd "$(dirname "$0")"
