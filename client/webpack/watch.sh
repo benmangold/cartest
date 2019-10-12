@@ -14,4 +14,4 @@ docker build -t bm/webpack -f $PWD/client/webpack/Dockerfile .
 
 echo "running webpack in $PWD"
 
-docker run --rm -it -d --name webpack -v $PWD/client:/tmp/app/client bm/webpack npm run dist-watch
+docker run --rm -it -d --name webpack -v $PWD/client:/tmp/app/client bm/webpack npm run webpack-watch
