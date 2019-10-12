@@ -1,5 +1,5 @@
-#!/bin/sh
-
+#!/bin/bash
+set -e
 ## ##
 ## starts nodejs and ffmpeg in a docker container
 ##
@@ -24,8 +24,6 @@ echo "" >> aws.secret.js
 
 cd ..
 
-docker build -t bm/nodejs-ffmpeg .
-
 rm server/aws.secret.js
 
-docker run -it -d --name nodejs -e CI_ENV=$CI_ENV --network host bm/nodejs-ffmpeg node server/index.js 
+docker run -it -d --name nodejs -e CI_ENV=$CI_ENV -v $PWD/node_modules:/tmp/app/node_modules --network host bm/nodejs-ffmpeg node server/index.js 

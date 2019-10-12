@@ -7,12 +7,12 @@ RUN apk add mongodb=3.4.4-r0
 
 RUN mongo --version
 
-# VOLUME /data/db
-
 VOLUME [ "data", "/data/db"  ]
 
 EXPOSE 27017 28017
 
-COPY init.sh /tmp
-ENTRYPOINT [ "/tmp/init.sh" ]
+COPY mongo/init.sh /tmp
+
 CMD [ "mongod", "--bind_ip", "0.0.0.0" ]
+
+ENTRYPOINT [ "/tmp/init.sh" ]

@@ -1,5 +1,13 @@
 *
-!server
+
+# client
+!.babelrc
+!webpack.config.js
+!.eslintrc.js
+
+# client and server
 !package.json
 !package-lock.json
-!ffmpeg
+
+# mongo
+!mongo/init.sh

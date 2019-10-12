@@ -12,7 +12,9 @@ i want to build a tool which helps me find clarity in my audio engineering decis
 
 ## cheesy, what IS it though?
 
-it is a fully-containerized, full-stack app backed by mongo and S3
+mostly where I play around with docker containers and build tooling so far
+
+cartest is a fully-containerized beginning of a full-stack app backed by mongo and S3
 
 media files can be uploaded to the express server from a react client, where they are encoded to mp3 via ffmpeg and uploaded to s3
 
@@ -26,7 +28,7 @@ requires nodejs/npm and docker on the host
 
 ```bash
 cd cartest
-npm run init # installs webpack-cli and runs startup script, you'll be prompted to say yes
+npm run startup
 ```
 
 check out [http://127.0.0.1:81](http://127.0.0.1:81)

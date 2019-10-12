@@ -4,32 +4,28 @@ pipeline {
         CI_ENV    = 'jenkins'
     }
     stages {
-        stage('start mongo') {
+        stage('creds') {
             steps {
                 nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
-                    sh 'npm run db'
+                    withCredentials([string(credentialsId: 'jenkins-ip', variable: 'API_IP')]) {
+                        sh 'rm ./client/src/config.js'
+                        sh 'echo export default \\"$API_IP:81\\" >> ./client/src/config.js'
+                    }
                 }
             }
         }
-        stage('start nodejs') {
+        stage('build') {
             steps {
                 nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
-                    withCredentials([usernamePassword(credentialsId: 'cartest-s3-dev', passwordVariable: 'AWS_SECRET_KEY', usernameVariable: 'AWS_ACCESS_KEY')]) {
-                        sh 'npm run server-ci'
-                    }
+                    sh 'npm run build'
                 }
             }
         }
         stage('start nginx') {
             steps {
                 nodejs(nodeJSInstallationName: 'NodeJS 10.16.0') {
-                    withCredentials([string(credentialsId: 'jenkins-ip', variable: 'API_IP')]) {
-                        sh 'rm ./client/src/config.js'
-                        sh 'echo export default \\"$API_IP:81\\" >> ./client/src/config.js'
-                        sh 'npm i -g npx'
-                        sh 'npm i -D webpack-cli'	
-                        sh 'npm run client-ci'
-
+                    withCredentials([usernamePassword(credentialsId: 'cartest-s3-dev', passwordVariable: 'AWS_SECRET_KEY', usernameVariable: 'AWS_ACCESS_KEY')]) {
+                        sh 'npm run ci'
                     }
                 }
             }
@@ -37,14 +33,12 @@ pipeline {
         stage('testing') {
             steps {
                 sh 'curl 127.0.0.1:81/api/version'
-                sh 'curl 127.0.0.1:81/index.html'
-                sh 'curl 127.0.0.1:3000'
-                sh 'curl 127.0.0.1:27017'
+                sh 'curl 127.0.0.1:81/api/audioLinks'
             }
-            input {
-                message "App running on 81. Continue?"
-                ok "Yes, stop the app."
-            }          
+            // input {
+            //     message "App running on 81. Continue?"
+            //     ok "Yes, stop the app."
+            // }  
         }
     }
     post { 

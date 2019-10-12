@@ -58,7 +58,7 @@ module.exports.addFormEncodeMp3AudioRoute = app => {
 
         console.log(`Uploaded! \n${JSON.stringify(uploadData)}`);
 
-        res.download(encodedFilePath);
+        res.end(JSON.stringify({'jobId': jobId}));
       } catch (err) {
         console.log(err);
         console.log(`Upload Error \n${JSON.stringify(err)}`);
