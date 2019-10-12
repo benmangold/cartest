@@ -1,16 +1,9 @@
 *
 
-# !server
-
 # client
 !.babelrc
 !webpack.config.js
 !.eslintrc.js
-
-# client and server
-!node_modules
-!package.json
-!package-lock.json
 
 # mongo
 !mongo/init.sh
