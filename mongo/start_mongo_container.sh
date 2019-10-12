@@ -13,8 +13,6 @@ cd "$(dirname "$0")"
 
 mkdir -p data
 
-# docker build -t bm/mongo-alpine .
-
 docker run -d --name mongo -v $PWD/data:/data/db -p 27017:27017 bm/mongo-alpine:latest
   
 ## debug mongo container

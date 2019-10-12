@@ -8,8 +8,6 @@ set -e
 
 cd "$(dirname "$0")"
 
-# docker build . -t bm/nginx-alpine
-
 docker run -d -it --name nginx --network host \
 -v $PWD/dist:/usr/share/nginx/html \
 -v $PWD/nginx-ci:/etc/nginx \
