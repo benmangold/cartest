@@ -6,7 +6,7 @@ export default props => (
       action='api/form/encodeMp3Audio'
       method='post'
       enctype='multipart/form-data'
-      onSubmit={ (event) => { event.preventDefault(); }}
+      onSubmit={ (event) => { console.log(event); }}
     >
       <input type='file' name='mediaUpload' />
       <input type='submit' value='Submit' />

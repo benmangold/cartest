@@ -3,6 +3,7 @@ set +e
 
 echo ~~ stopping docker containers ~~
 
+docker stop webpack-watch
 docker stop nginx
 docker stop nodejs
 docker stop mongo
